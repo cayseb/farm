@@ -1,0 +1,17 @@
+services:
+    web:
+        image: nginx:1.25.4-alpine
+        restart: always
+        container_name: web-farm
+        volumes:
+            - ./:/app
+        depends_on:
+            - php-fpm
+        ports:
+            - "80:80"
+    php-fpm:
+        build: ./docker/php/local
+        container_name: php-farm
+        restart: always
+        volumes:
+            - .:/app:rw,delegated
