@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Enums\LivestockEnum;
-use App\Factories\LivestockFactory;
+use App\Helpers\LivestockHelper;
 use App\Services\Livestock\Livestock;
 
 class Farm
@@ -18,7 +18,7 @@ class Farm
 
     public function add(LivestockEnum $animal): void
     {
-        $this->livestock[] = LivestockFactory::addAnimal($animal);
+        $this->livestock[] = LivestockHelper::addAnimal($animal);
     }
 
 

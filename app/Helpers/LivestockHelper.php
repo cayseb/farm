@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Factories;
+namespace App\Helpers;
 
 use App\Enums\LivestockEnum;
 use App\Services\Livestock\Chicken;
 use App\Services\Livestock\Cow;
 use App\Services\Livestock\Livestock;
 
-class LivestockFactory
+class LivestockHelper
 {
 
     public static function addAnimal(LivestockEnum $enum): Livestock
